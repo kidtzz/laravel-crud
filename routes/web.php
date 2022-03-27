@@ -20,3 +20,11 @@ Route::get('/', function () {
 
 Route::resource('pegawai',PegawaiController::class);
 // Route::resource('student','App\Http\Controllers\StudentController');
+
+//Route get => pegawai => index
+//Route get => pegawai/create => create
+//Route post => pegawai => store
+//Route get => pegawai/{id} => show
+//Route put => pegawai/{id} => update
+//Route delete => pegawai/{id} => delete
+//Route get => pegawai/{id}/edit => edit

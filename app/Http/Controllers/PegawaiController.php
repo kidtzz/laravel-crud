@@ -30,6 +30,10 @@ class PegawaiController extends Controller
     public function create()
     {
         //
+        $model = new Pegawai;
+        return view('pegawai.create',compact(
+            'model'
+        ));
     }
 
     /**
@@ -41,6 +45,14 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new pegawai;
+        $model->nama = $request->nama;
+        $model->alamat = $request->alamat;
+        $model->tgllahir = $request->tgllahir;
+        $model->golongan = $request->golongan;
+        $model->save();
+
+        return redirect('pegawai');
     }
 
     /**
@@ -63,6 +75,10 @@ class PegawaiController extends Controller
     public function edit($id)
     {
         //
+        $model =  Pegawai :: find($id) ;
+        return view('pegawai.edit',compact(
+            'model'
+        ));
     }
 
     /**
@@ -75,6 +91,14 @@ class PegawaiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $model =  Pegawai :: find($id);
+        $model->nama = $request->nama;
+        $model->alamat = $request->alamat;
+        $model->tgllahir = $request->tgllahir;
+        $model->golongan = $request->golongan;
+        $model->save();
+
+        return redirect('pegawai');
     }
 
     /**
@@ -85,6 +109,8 @@ class PegawaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model =  Pegawai :: find($id);
+        $model->delete();
+        return redirect('pegawai');
     }
 }
