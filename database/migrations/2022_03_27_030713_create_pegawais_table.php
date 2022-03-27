@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama', 100);
             $table->string('alamat',100);
             $table->date('tgllahir');
+            $table->string('golongan',10);
             $table->timestamps();
         });
     }
