@@ -29,7 +29,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        
         $model = new Pegawai;
         return view('pegawai.create',compact(
             'model'
@@ -44,7 +44,7 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
         $model = new pegawai;
         $model->nama = $request->nama;
         $model->alamat = $request->alamat;
@@ -74,7 +74,7 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        
         $model =  Pegawai :: find($id) ;
         return view('pegawai.edit',compact(
             'model'
@@ -90,7 +90,7 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
         $model =  Pegawai :: find($id);
         $model->nama = $request->nama;
         $model->alamat = $request->alamat;
